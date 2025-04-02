@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1743610329 source:d:\edu_materials\uni_edu_materials\msc_cs_usjp\2nd-year\semester-3\0.semester-2-extended\9. c lab\computer_programming\codes\c_tutorial_codes\abc_college_app\abc_college_app\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1743604088 source:d:\edu_materials\uni_edu_materials\msc_cs_usjp\2nd-year\semester-3\0.semester-2-extended\9. c lab\computer_programming\codes\c_tutorial_codes\abc_college_app\abc_college_app\part_h.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
