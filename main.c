@@ -3,7 +3,7 @@
 #include <string.h> //include string header file
 
 //constants
-const int NO_OF_STUDENT_RECORDS = 10;
+#define NO_OF_STUDENT_RECORDS 10
 
 //enumu
 enum mainMenuOptions
@@ -96,7 +96,7 @@ void mainMenuHandler()
 
     //Defining an array of structures with type of StudentDataRecord
     //Initialize each record to default empty values
-    struct StudentDataRecord studentDataArr[10] =
+    struct StudentDataRecord studentDataArr[NO_OF_STUDENT_RECORDS] =
     {
         {"", 0, 0, 0, 0.0f, '\0'},
         {"", 0, 0, 0, 0.0f, '\0'},
