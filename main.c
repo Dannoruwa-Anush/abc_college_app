@@ -35,8 +35,8 @@ struct StudentDataRecord
 int displayMainMenu();
 void mainMenuHandler();
 
-void loadData(FILE *cfptr, int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS]);
-void saveData(FILE *cfptr, int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS]);
+void loadData(int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS]);
+void saveData(int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS]);
 
 int isArrayFull(int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS]);
 char findGrade(float avgMark);
@@ -91,9 +91,6 @@ int displayMainMenu()
 
 void mainMenuHandler()
 {
-    //file handling
-    FILE *cfptr = NULL;
-
     //Defining an array of structures with type of StudentDataRecord
     //Initialize each record to default empty values
     struct StudentDataRecord studentDataArr[NO_OF_STUDENT_RECORDS] =
@@ -141,11 +138,11 @@ void mainMenuHandler()
             break;
 
         case LOAD_DATA :
-            loadData(cfptr, &number_of_records, studentDataArr);
+            loadData(&number_of_records, studentDataArr);
             break;
 
         case SAVE_DATA :
-            saveData(cfptr, &number_of_records, studentDataArr);
+            saveData(&number_of_records, studentDataArr);
             break;
 
         case EXIT :
@@ -161,10 +158,10 @@ void mainMenuHandler()
 //----
 
 //----
-void loadData(FILE *cfptr, int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS])
+void loadData(int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS])
 {
     // Open the file for reading
-    cfptr = fopen("data.txt", "r");
+    FILE *cfptr = fopen("data.txt", "r");
 
     // Check if the file could not be opened
     if (cfptr == NULL)
@@ -204,10 +201,10 @@ void loadData(FILE *cfptr, int *arrExistingElementCountPtr, struct StudentDataRe
 //----
 
 //----
-void saveData(FILE *cfptr, int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS])
+void saveData(int *arrExistingElementCountPtr, struct StudentDataRecord arr[NO_OF_STUDENT_RECORDS])
 {
     // Open the file in write mode ("w")
-    cfptr = fopen("data.txt", "w");
+    FILE *cfptr = fopen("data.txt", "w");
 
     // Check if the file could not be opened
     if (cfptr == NULL)
